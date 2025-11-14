@@ -2,7 +2,6 @@ export interface PersonalInfo {
   name: string;
   role: string;
   tagline: string;
-  email: string; // Private - only used for contact form backend
   linkedin: string;
   github: string;
   website?: string;
@@ -48,7 +47,6 @@ export const personalInfo = {
   name: "Rafael Amiel Gan",
   role: "Front-End Software Engineer",
   tagline: "Building accessible, component-driven UI with React, TypeScript, and modern web technologies",
-  email: "rafaelamielgan@gmail.com", // Only used for contact form - not displayed publicly
   linkedin: "https://linkedin.com/in/ganrafael",
   github: "https://github.com/ganrafael",
   website: "https://rafaelgan.vercel.app/",
