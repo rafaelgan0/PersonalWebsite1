@@ -232,9 +232,9 @@ This project is open source and available under the MIT License.
 
 ## 📧 Contact
 
-Rafael Gan - [LinkedIn](https://linkedin.com/in/yourprofile) - [GitHub](https://github.com/yourprofile)
+Rafael Gan - [LinkedIn](https://linkedin.com/in/ganrafael) - [GitHub](https://github.com/rafaelgan0)
 
-Project Link: [https://yourportfolio.vercel.app](https://yourportfolio.vercel.app)
+Project Link: [https://rafaelgan.vercel.app](https://rafaelgan.vercel.app)
 
 ---
 

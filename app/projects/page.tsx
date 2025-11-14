@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Sparkles } from "lucide-react";
-import { projects } from "@/lib/resume-data";
+import { projects, personalInfo } from "@/lib/resume-data";
 import FadeUp from "@/components/animations/FadeUp";
 import StaggerContainer from "@/components/animations/StaggerContainer";
 
@@ -164,7 +164,7 @@ export default function ProjectsPage() {
                 Check out my GitHub for additional projects and contributions
               </p>
               <a
-                href="https://github.com/yourprofile"
+                href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="dessert-button inline-flex items-center"

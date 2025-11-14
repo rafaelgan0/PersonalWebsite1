@@ -48,7 +48,7 @@ export const personalInfo = {
   role: "Front-End Software Engineer",
   tagline: "Building accessible, component-driven UI with React, TypeScript, and modern web technologies",
   linkedin: "https://linkedin.com/in/ganrafael",
-  github: "https://github.com/ganrafael",
+  github: "https://github.com/rafaelgan0",
   website: "https://rafaelgan.vercel.app/",
   location: "Tempe, AZ",
   bio: "Front-end Software Engineer with 2 years of experience focused on accessible, component-driven UI engineering. Experienced in shipping production features with Blazor + Syncfusion and building scalable React + TypeScript applications. Strong in modern UI architecture, performance optimization, and testing with a focus on delivering accessible, high-quality user interfaces.",
