@@ -1,48 +1,38 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+config.autoAddCss = false;
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import AnimatedBackground from "@/components/AnimatedBackground";
+import SplashScreen from "@/components/SplashScreen";
+import Providers from "@/components/Providers";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap",
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Rafael Gan - Full-Stack Developer",
-  description: "Personal portfolio showcasing projects, experience, and skills in web development",
-  keywords: ["Rafael Gan", "Full-Stack Developer", "React", "TypeScript", "Next.js", "Web Development"],
-  authors: [{ name: "Rafael Gan" }],
-  openGraph: {
-    title: "Rafael Gan - Full-Stack Developer",
-    description: "Personal portfolio showcasing projects, experience, and skills",
-    type: "website",
-  },
+  title: "My Portfolio",
+  description: "Personal portfolio website",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="min-h-screen flex flex-col">
-        <Navigation />
-        <main className="flex-1">
-          {children}
-        </main>
-        <Footer />
+    <html lang="en">
+      <body className={inter.className}>
+        <Providers>
+          <SplashScreen />
+          <AnimatedBackground />
+          <Navigation />
+          <main>{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
 }
-

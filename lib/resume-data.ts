@@ -16,6 +16,7 @@ export interface Experience {
   location: string;
   highlights: string[];
   technologies: string[];
+  palette?: string[];
 }
 
 export interface Project {
@@ -26,6 +27,7 @@ export interface Project {
   link?: string;
   github?: string;
   image?: string;
+  palette?: string[];
 }
 
 export interface Education {
@@ -45,72 +47,76 @@ export interface Award {
 
 export const personalInfo = {
   name: "Rafael Amiel Gan",
-  role: "Front-End Software Engineer",
-  tagline: "Building accessible, component-driven UI with React, TypeScript, and modern web technologies",
+  role: "Software Engineer",
+  tagline: "Blazor/.NET + React/TypeScript | Performance & Accessibility Focused",
   linkedin: "https://linkedin.com/in/ganrafael",
   github: "https://github.com/rafaelgan0",
   website: "https://rafaelgan.vercel.app/",
   location: "Tempe, AZ",
-  bio: "Front-end Software Engineer with 2 years of experience focused on accessible, component-driven UI engineering. Experienced in shipping production features with Blazor + Syncfusion and building scalable React + TypeScript applications. Strong in modern UI architecture, performance optimization, and testing with a focus on delivering accessible, high-quality user interfaces.",
+  bio: "Software Engineer (Blazor/.NET + React/TypeScript) focused on performance and accessibility; cut initial load time 30%, reduced upload time up to 90%, and improved WAVE accessibility score 5/10 → 9.9/10.",
 };
 
 export const experiences: Experience[] = [
   {
-    company: "Cognizant, TriZetto QNXT Modernization Team",
+    company: "Cognizant, TriZetto QNXT Modernization Team (Healthcare Tech)",
     role: "Software Engineer",
     period: "Aug 2024 - Present",
-    location: "Remote",
+    location: "Mesa, AZ",
     highlights: [
-      "Built modular, reusable UI components for QNXT modernization; patterns adopted for future modules",
-      "Implemented WCAG/ARIA semantics raising WAVE accessibility score from **1/10 → 9.9/10**",
-      "Partnered with Product and Solution Owners to translate business workflows into scalable, maintainable UI",
-      "Delivered key UI flows for the **HSC 2025** demo under a three-week deadline",
-      "Maintained **85%+** unit test coverage; validated accessibility via WAVE and NVDA",
+      // Performance
+      "Tuned Blazor lifecycles to speed up initial page loads",
+      "Built a JS interop pipeline to bypass SignalR bottlenecks",
+      "Making uploads and rendering significantly faster",
+      // Accessibility & UI
+      "Reworked semantic HTML and ARIA across the app",
+      "Configured Syncfusion components for full screen reader support",
+      "Built a reusable grid system that standardized UI development",
+      // Delivery & Quality
+      "Shipped 10+ features for the HSC 2025 conference demo",
+      "Maintained strong test coverage with xUnit",
+      "Validated accessibility end-to-end with WAVE and NVDA",
     ],
-    technologies: ["Blazor", "Syncfusion", "C#", ".NET", "UI Architecture", "WCAG 2.1 AA", "ARIA", "WAVE", "NVDA"],
+    technologies: [".NET 8", "Blazor", "Syncfusion", "C#", "JavaScript", "SignalR", "xUnit", "WCAG 2.1 AA", "ARIA", "WAVE", "NVDA"],
+    palette: ['#0A2463', '#1E6091', '#3E92CC', '#D4AF37'],
   },
   {
     company: "Cognizant, TriZetto QNXT Modernization Team",
     role: "Software Engineer Intern",
     period: "Jun 2023 - Aug 2023",
-    location: "Remote",
+    location: "Mesa, AZ",
     highlights: [
-      "Built the **Blazor + Syncfusion** POC validating modernization feasibility",
-      "Developed core console page for performance and integration testing",
-      "Implemented initial UI/architecture patterns influencing long-term design",
-      "Delivered functional demo used to secure modernization approval",
+      "Built a Blazor + Syncfusion proof-of-concept",
+      "Replicated core QNXT UI workflows end-to-end",
+      "Packaged it into a stakeholder demo with documented tradeoffs",
+      "Helped move the project from exploration to funded",
     ],
-    technologies: ["Blazor", "Syncfusion", "C#", ".NET", "UI Architecture"],
+    technologies: [".NET", "Blazor", "Syncfusion", "C#"],
+    palette: ['#2D1B69', '#573B8A', '#8B5FBF', '#D4A5FF'],
   },
 ];
 
 export const projects: Project[] = [
   {
     title: "IQity Brain Performance Report",
-    description: "Production SPA for medical data visualization used in live client presentations",
+    description: "Multi-section cognitive performance report UI for medical data visualization",
     highlights: [
-      "Built **8 typed, reusable modules** (executive summary, biomarkers, cognitive foundations, recommendations)",
-      "Implemented REST + JSON data pipelines with strict **Zod runtime validation**",
-      "Used **useMemo/useCallback/useEffect** to optimize rendering for large datasets",
-      "Delivered WCAG-compliant UI and automated tests with **Vitest + RTL**",
-      "Production application used in live medical presentations",
+      // Report UI
+      "Built a multi-section cognitive performance report",
+      "Visualized structured medical data with Recharts",
+      "Deployed to Vercel for live stakeholder review",
+      // Data Integrity
+      "Enforced a runtime JSON contract with Zod",
+      "Blocked invalid payloads before they hit the UI",
+      "Surfaced actionable schema errors instead of silent failures",
+      // Architecture
+      "Wired up config-driven dual data sources",
+      "Local fixtures for demos, HTTP API for production",
+      "Kept the UI fully decoupled from the backend",
     ],
-    technologies: ["React", "TypeScript", "Vite", "Tailwind", "Radix UI", "Recharts", "Zod", "Vitest", "RTL"],
+    technologies: ["React 18", "TypeScript", "Vite", "Tailwind", "Radix UI", "Recharts", "Zod", "Vitest"],
     link: "https://iquity-report-project.vercel.app/",
     image: "/images/iqity-project.png",
-  },
-  {
-    title: "Personal Portfolio Website",
-    description: "Modern, dessert-themed portfolio website with smooth animations and elegant design",
-    highlights: [
-      "Built with **Next.js 15** and **TypeScript**",
-      "Implemented smooth scroll animations with **Framer Motion**",
-      "Custom dessert-themed design system with **Tailwind CSS**",
-      "Fully responsive and optimized for performance",
-    ],
-    technologies: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS"],
-    link: "https://rafaelgan.vercel.app/",
-    github: "https://github.com/ganrafael/PersonalWebsite1",
+    palette: ['#0B3D2E', '#1A7A5C', '#2EC4B6', '#CBF3F0'],
   },
 ];
 
@@ -118,8 +124,8 @@ export const education: Education[] = [
   {
     institution: "Georgia Institute of Technology",
     degree: "Master of Science in Computer Science (OMSCS)",
-    period: "Spring 2026 - 2030 (Expected)",
-    honors: ["Enrolling Spring 2026"],
+    period: "2026 - Present",
+    honors: [],
   },
   {
     institution: "Arizona State University",
@@ -133,27 +139,15 @@ export const awards: Award[] = [
   {
     title: "Raise the Bar Award",
     organization: "Cognizant",
-    year: "2024",
-    description: "Recognized for high-impact UI delivery, accessibility uplift, and engineering excellence",
-  },
-  {
-    title: "President's Scholar",
-    organization: "Arizona State University",
-    year: "2020 - 2024",
-    description: "Merit scholarship for academic excellence",
-  },
-  {
-    title: "Summa Cum Laude",
-    organization: "Arizona State University",
-    year: "2024",
-    description: "Graduated with highest honors",
+    year: "2025",
+    description: "Shipped key UI components for the HSC 2025 client demo within a 3-week deadline",
   },
 ];
 
 export const skills = {
-  "Languages & Frameworks": ["JavaScript", "TypeScript", "React", "Next.js", "Blazor", "Syncfusion", "HTML/CSS", "Tailwind", "Vite"],
-  "Frontend Specialization": ["Component Architecture", "Context API", "Accessibility (WCAG 2.1 AA)", "Performance Optimization", "Design Systems"],
-  "Testing & Tools": ["Vitest", "React Testing Library", "Unit Testing (85%+)", "Zod", "DevTools", "WAVE", "NVDA"],
-  "Practices": ["Code Reviews", "Agile", "API Integration", "ARIA Semantics", "Responsive Design"],
+  "Front End": ["React", "Next.js", "TypeScript", "JavaScript", "HTML/CSS", "Vite", "Radix UI", "Recharts", "Syncfusion"],
+  "Platform": [".NET 8", "Blazor"],
+  "Tools/Testing": ["Git", "Chrome DevTools", "xUnit", "Vitest", "Zod", "VsCode", "Visual Studio"],
+  "Accessibility": ["WAVE", "NVDA", "WCAG 2.1 AA"],
 };
 

@@ -13,10 +13,10 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faLocationDot,
-  faBriefcase,
   faGraduationCap,
   faTrophy,
   faCode,
+  faCompactDisc,
 } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
@@ -104,9 +104,14 @@ const categoryBorders: Record<string, string> = {
   Accessibility: 'rgba(251, 191, 36, 0.25)',
 };
 
-export default function About() {
+/* ═══════════════════════════════════════════════════
+   AboutSection — scrollable artist profile
+   ═══════════════════════════════════════════════════ */
+export default function AboutSection({ isVisible }: { isVisible: boolean }) {
+  const anim = isVisible ? 'show' : 'hidden';
+
   return (
-    <div className="min-h-screen pb-24">
+    <div className="pb-24">
       {/* ══════════════════════════════════════
           Hero — Artist Profile Header
           ══════════════════════════════════════ */}
@@ -115,7 +120,11 @@ export default function About() {
         <motion.div
           className="relative"
           initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
-          animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+          animate={
+            isVisible
+              ? { opacity: 1, scale: 1, filter: 'blur(0px)' }
+              : { opacity: 0, scale: 0.8, filter: 'blur(10px)' }
+          }
           transition={{ duration: 0.8, ease: EASE }}
         >
           {/* Glow ring */}
@@ -144,7 +153,7 @@ export default function About() {
           custom={0.15}
           variants={fadeUp}
           initial="hidden"
-          animate="show"
+          animate={anim}
         >
           {personalInfo.name}
         </motion.h1>
@@ -154,7 +163,7 @@ export default function About() {
           custom={0.25}
           variants={fadeUp}
           initial="hidden"
-          animate="show"
+          animate={anim}
         >
           {personalInfo.role}
         </motion.p>
@@ -164,7 +173,7 @@ export default function About() {
           custom={0.3}
           variants={fadeUp}
           initial="hidden"
-          animate="show"
+          animate={anim}
         >
           <FontAwesomeIcon icon={faLocationDot} className="text-xs" />
           <span>{personalInfo.location}</span>
@@ -176,7 +185,7 @@ export default function About() {
           custom={0.35}
           variants={fadeUp}
           initial="hidden"
-          animate="show"
+          animate={anim}
         >
           <a
             href={personalInfo.linkedin}
@@ -197,6 +206,27 @@ export default function About() {
             <FontAwesomeIcon icon={faGithub} className="text-base" />
           </a>
         </motion.div>
+
+        {/* Download Album (Resume) */}
+        <motion.div
+          className="mt-6"
+          custom={0.42}
+          variants={fadeUp}
+          initial="hidden"
+          animate={anim}
+        >
+          <a
+            href="/Resume.pdf"
+            download
+            className="glass-island inline-flex items-center gap-2.5 px-6 py-2.5 text-sm font-medium text-white/80 hover:text-white transition-colors group"
+          >
+            <FontAwesomeIcon
+              icon={faCompactDisc}
+              className="text-sm text-white/50 group-hover:text-white/80 transition-colors animate-[spin_4s_linear_infinite]"
+            />
+            Download Album
+          </a>
+        </motion.div>
       </section>
 
       {/* ══════════════════════════════════════
@@ -207,7 +237,7 @@ export default function About() {
         custom={0.4}
         variants={fadeUp}
         initial="hidden"
-        animate="show"
+        animate={anim}
       >
         <div
           className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 p-5 sm:p-6"
@@ -218,7 +248,11 @@ export default function About() {
               key={i}
               className="text-center"
               initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={
+                isVisible
+                  ? { opacity: 1, y: 0 }
+                  : { opacity: 0, y: 12 }
+              }
               transition={{ duration: 0.5, ease: EASE, delay: 0.5 + i * 0.08 }}
             >
               <p className="text-xl sm:text-2xl font-bold text-white tracking-tight">
@@ -236,38 +270,14 @@ export default function About() {
       </motion.section>
 
       {/* ══════════════════════════════════════
-          Bio
+          Skills — Genre Tags
           ══════════════════════════════════════ */}
       <motion.section
         className="max-w-2xl mx-auto px-4 mt-8"
         custom={0.55}
         variants={fadeUp}
         initial="hidden"
-        animate="show"
-      >
-        <div className="p-6 sm:p-8" style={glassCard}>
-          <h2 className="text-lg font-semibold text-white/80 mb-3 flex items-center gap-2">
-            <FontAwesomeIcon
-              icon={faBriefcase}
-              className="text-sm text-white/30"
-            />
-            About
-          </h2>
-          <p className="text-sm sm:text-base text-white/50 leading-relaxed">
-            {personalInfo.bio}
-          </p>
-        </div>
-      </motion.section>
-
-      {/* ══════════════════════════════════════
-          Skills — Genre Tags
-          ══════════════════════════════════════ */}
-      <motion.section
-        className="max-w-2xl mx-auto px-4 mt-8"
-        custom={0.65}
-        variants={fadeUp}
-        initial="hidden"
-        animate="show"
+        animate={anim}
       >
         <div className="p-6 sm:p-8" style={glassCard}>
           <h2 className="text-lg font-semibold text-white/80 mb-5 flex items-center gap-2">
@@ -304,7 +314,11 @@ export default function About() {
                       }}
                       whileHover={{
                         scale: 1.06,
-                        transition: { type: 'spring', stiffness: 400, damping: 20 },
+                        transition: {
+                          type: 'spring',
+                          stiffness: 400,
+                          damping: 20,
+                        },
                       }}
                     >
                       {skill}
@@ -325,7 +339,7 @@ export default function About() {
         custom={0.75}
         variants={fadeUp}
         initial="hidden"
-        animate="show"
+        animate={anim}
       >
         <div className="p-6 sm:p-8" style={glassCard}>
           <h2 className="text-lg font-semibold text-white/80 mb-5 flex items-center gap-2">
@@ -387,7 +401,7 @@ export default function About() {
           custom={0.85}
           variants={fadeUp}
           initial="hidden"
-          animate="show"
+          animate={anim}
         >
           <div className="p-6 sm:p-8" style={glassCard}>
             <h2 className="text-lg font-semibold text-white/80 mb-5 flex items-center gap-2">

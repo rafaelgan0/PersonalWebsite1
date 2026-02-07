@@ -1,80 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-display: 'Playfair Display', serif;
+@layer base {
+  body {
+    @apply relative overflow-x-hidden;
+    background: transparent;
+  }
+  
+  main {
+    @apply relative z-10;
+  }
 }
 
-@layer base {
-  * {
-    @apply border-chocolate-200;
-  }
-  
-  html {
-    @apply scroll-smooth;
-  }
-  
-  body {
-    @apply bg-latte text-chocolate font-sans antialiased;
+@layer components {
+  /* ── Apple-style glass island ── */
+  .glass-island {
+    position: relative;
+    border-radius: 9999px;
+    /* Frosted glass */
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    /* Subtle rim light */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    /* Outer glow */
+    box-shadow:
+      0 0 0 0.5px rgba(255, 255, 255, 0.04),
+      0 2px 8px rgba(0, 0, 0, 0.3),
+      0 8px 32px rgba(0, 0, 0, 0.2),
+      inset 0 0.5px 0 rgba(255, 255, 255, 0.06);
+    transition:
+      background 0.4s ease,
+      border-color 0.4s ease,
+      box-shadow 0.4s ease;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply text-chocolate font-display;
+  .glass-island:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow:
+      0 0 0 0.5px rgba(255, 255, 255, 0.06),
+      0 2px 12px rgba(0, 0, 0, 0.35),
+      0 8px 40px rgba(0, 0, 0, 0.25),
+      inset 0 0.5px 0 rgba(255, 255, 255, 0.1);
   }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  /* Hide scrollbar but keep scrolling */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
-
-  .frosting-card {
-    @apply bg-frosting-cream/60 backdrop-blur-md border border-white/40 rounded-dessert shadow-dessert;
-  }
-
-  .frosting-card-hover {
-    @apply frosting-card transition-all duration-300 hover:shadow-dessert-lg hover:-translate-y-1;
-  }
-
-  .gradient-text {
-    @apply bg-gradient-to-r from-macaron-pink via-macaron-lavender to-macaron-pistachio bg-clip-text text-transparent;
-  }
-
-  .dessert-button {
-    @apply px-6 py-3 rounded-macaron bg-gradient-to-r from-macaron-pink to-macaron-lavender text-white font-medium shadow-dessert hover:shadow-dessert-lg transition-all duration-300 hover:scale-105;
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  @apply bg-latte-100;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply bg-macaron-pink/50 rounded-full;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-macaron-pink/70;
-}
-
-/* Selection colors */
-::selection {
-  @apply bg-macaron-pink/30 text-chocolate;
-}
-
-/* Smooth animations */
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
-
