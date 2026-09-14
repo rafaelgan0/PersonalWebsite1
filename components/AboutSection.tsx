@@ -92,12 +92,14 @@ const glassCard: React.CSSProperties = {
 
 /* ── Skill category colors ── */
 const categoryColors: Record<string, string> = {
+  'AI/Agents': 'rgba(236, 72, 153, 0.15)',
   'Front End': 'rgba(59, 130, 246, 0.15)',
   Platform: 'rgba(168, 85, 247, 0.15)',
   'Tools/Testing': 'rgba(34, 197, 94, 0.15)',
   Accessibility: 'rgba(251, 191, 36, 0.15)',
 };
 const categoryBorders: Record<string, string> = {
+  'AI/Agents': 'rgba(236, 72, 153, 0.25)',
   'Front End': 'rgba(59, 130, 246, 0.25)',
   Platform: 'rgba(168, 85, 247, 0.25)',
   'Tools/Testing': 'rgba(34, 197, 94, 0.25)',

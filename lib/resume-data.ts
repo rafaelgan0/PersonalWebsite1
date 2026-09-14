@@ -48,39 +48,39 @@ export interface Award {
 export const personalInfo = {
   name: "Rafael Amiel Gan",
   role: "Software Engineer",
-  tagline: "Blazor/.NET + React/TypeScript | Performance & Accessibility Focused",
+  tagline: "AI Agents · .NET/Blazor · React/TypeScript | Accessibility Focused",
   linkedin: "https://linkedin.com/in/ganrafael",
   github: "https://github.com/rafaelgan0",
   website: "https://rafaelgan.vercel.app/",
   location: "Tempe, AZ",
-  bio: "Software Engineer (Blazor/.NET + React/TypeScript) focused on performance and accessibility; cut initial load time 30%, reduced upload time up to 90%, and improved WAVE accessibility score 5/10 → 9.9/10.",
+  bio: "I’m an Arizona-based software engineer building modern healthcare software with a focus on calm, reliable UX. At Cognizant I work in .NET and Blazor with Syncfusion, and I architect AI agent pipelines that modernize legacy screens, encoding our design system, theming, and accessibility standards into agent skills so the generated code is production-ready. I’m the person who’ll chase down the “why does this feel slow” moments and make sure the experience works for everyone, especially with screen readers in mind. Outside of work, I’m building Coachlink, a Flutter + Supabase platform connecting high school students with coaches and recruiters, and pursuing an M.S. in Computer Science (AI specialization) at Georgia Tech.",
 };
-
+// Software Engineer (Blazor/.NET + React/TypeScript) focused on performance and accessibility; cut initial load time 30%, reduced upload time up to 90%, and improved WAVE accessibility score 5/10 → 9.9/10.
 export const experiences: Experience[] = [
   {
-    company: "Cognizant, TriZetto QNXT Modernization Team (Healthcare Tech)",
-    role: "Software Engineer",
+    company: "Cognizant, TriZetto Healthcare Products (QNXT Modernization)",
+    role: "Associate Software Engineer",
     period: "Aug 2024 - Present",
     location: "Mesa, AZ",
     highlights: [
-      // Performance
-      "Tuned Blazor lifecycles to speed up initial page loads",
-      "Built a JS interop pipeline to bypass SignalR bottlenecks",
-      "Making uploads and rendering significantly faster",
-      // Accessibility & UI
-      "Reworked semantic HTML and ARIA across the app",
-      "Configured Syncfusion components for full screen reader support",
-      "Built a reusable grid system that standardized UI development",
-      // Delivery & Quality
-      "Shipped 10+ features for the HSC 2025 conference demo",
-      "Maintained strong test coverage with xUnit",
-      "Validated accessibility end-to-end with WAVE and NVDA",
+      // AI Agents
+      "Architected an agentic pipeline that migrates legacy Web Forms screens to Blazor (.NET 10)",
+      "Automates **80–90%** of each screen’s migration, leaving engineers to final review",
+      "Authored agent skills that encode our design system, theming, and SCSS standards",
+      // Accessibility
+      "Led ADA remediation that raised a module’s WAVE score from **5 → 9.9**",
+      "Agent-generated pages score **8–10** on WAVE using Syncfusion’s built-in accessibility",
+      "Building a Playwright + axe-core agent that detects WCAG violations and generates fixes",
+      // Performance & Delivery
+      "Cut large-file upload time by up to **90%** with a JS interop workaround for SignalR limits",
+      "Improved initial load time by **30%** through lazy loading, caching, and refactoring",
+      "Shipped features for a platform handling **~400K claims/day** with **85%+** xUnit coverage",
     ],
-    technologies: [".NET 8", "Blazor", "Syncfusion", "C#", "JavaScript", "SignalR", "xUnit", "WCAG 2.1 AA", "ARIA", "WAVE", "NVDA"],
+    technologies: ["AI Agents", ".NET 10", "ASP.NET Core", "Blazor", "Syncfusion", "C#", "SCSS", "SQL", "Playwright", "axe-core", "xUnit", "WCAG 2.1 AA", "NVDA"],
     palette: ['#0A2463', '#1E6091', '#3E92CC', '#D4AF37'],
   },
   {
-    company: "Cognizant, TriZetto QNXT Modernization Team",
+    company: "Cognizant, TriZetto Healthcare Products (QNXT Modernization)",
     role: "Software Engineer Intern",
     period: "Jun 2023 - Aug 2023",
     location: "Mesa, AZ",
@@ -88,14 +88,30 @@ export const experiences: Experience[] = [
       "Built a Blazor + Syncfusion proof-of-concept",
       "Replicated core QNXT UI workflows end-to-end",
       "Packaged it into a stakeholder demo with documented tradeoffs",
-      "Helped move the project from exploration to funded",
+      "Leadership used it to approve and fund the modernization initiative",
     ],
-    technologies: [".NET", "Blazor", "Syncfusion", "C#"],
+    technologies: [".NET 8", "Blazor", "Syncfusion", "C#"],
     palette: ['#2D1B69', '#573B8A', '#8B5FBF', '#D4A5FF'],
   },
 ];
 
 export const projects: Project[] = [
+  {
+    title: "Coachlink",
+    description: "Founder & sole engineer (beta): a platform connecting high school students with coaches and recruiters",
+    highlights: [
+      // Product
+      "Founded and operate a platform connecting high school students with coaches and recruiters",
+      "Ship iOS, Android, and web clients from a single Flutter codebase",
+      "Built with AI-assisted development, currently in beta",
+      // Full Stack
+      "Designed the Postgres data model on Supabase",
+      "Integrated Firebase authentication and Stripe payments",
+      "Own hosting and deployment on Vercel",
+    ],
+    technologies: ["Flutter", "Dart", "Supabase", "Postgres", "Firebase Auth", "Stripe", "Vercel"],
+    palette: ['#1B1F3B', '#E4572E', '#F3A712', '#FDF0D5'],
+  },
   {
     title: "IQity Brain Performance Report",
     description: "Multi-section cognitive performance report UI for medical data visualization",
@@ -112,8 +128,11 @@ export const projects: Project[] = [
       "Wired up config-driven dual data sources",
       "Local fixtures for demos, HTTP API for production",
       "Kept the UI fully decoupled from the backend",
+      // Migration
+      "Migrated the app from React to Vue with full feature parity",
+      "Re-established the build environment (PHP, Composer, NPM, Vite)",
     ],
-    technologies: ["React 18", "TypeScript", "Vite", "Tailwind", "Radix UI", "Recharts", "Zod", "Vitest"],
+    technologies: ["React 18", "TypeScript", "Vue", "Vite", "Tailwind", "Radix UI", "Recharts", "Zod", "Vitest"],
     link: "https://iquity-report-project.vercel.app/",
     image: "/images/iqity-project.png",
     palette: ['#0B3D2E', '#1A7A5C', '#2EC4B6', '#CBF3F0'],
@@ -123,7 +142,7 @@ export const projects: Project[] = [
 export const education: Education[] = [
   {
     institution: "Georgia Institute of Technology",
-    degree: "Master of Science in Computer Science (OMSCS)",
+    degree: "Master of Science in Computer Science (OMSCS), AI Specialization",
     period: "2026 - Present",
     honors: [],
   },
@@ -140,14 +159,15 @@ export const awards: Award[] = [
     title: "Raise the Bar Award",
     organization: "Cognizant",
     year: "2025",
-    description: "Shipped key UI components for the HSC 2025 client demo within a 3-week deadline",
+    description: "Delivered key workflows for the HSC 2025 client demo within a 3-week deadline",
   },
 ];
 
 export const skills = {
-  "Front End": ["React", "Next.js", "TypeScript", "JavaScript", "HTML/CSS", "Vite", "Radix UI", "Recharts", "Syncfusion"],
-  "Platform": [".NET 8", "Blazor"],
-  "Tools/Testing": ["Git", "Chrome DevTools", "xUnit", "Vitest", "Zod", "VsCode", "Visual Studio"],
-  "Accessibility": ["WAVE", "NVDA", "WCAG 2.1 AA"],
+  "AI/Agents": ["Agentic Pipelines", "Agent Skills", "Context Engineering", "AI-Assisted Development", "Legacy Modernization"],
+  "Front End": ["React", "Next.js", "TypeScript", "JavaScript", "Vue", "Flutter", "HTML/CSS/SCSS", "Tailwind CSS", "Vite", "Syncfusion"],
+  "Platform": [".NET 10", "ASP.NET Core", "Blazor", "C#", "SQL", "Supabase", "Firebase", "Stripe", "Vercel"],
+  "Tools/Testing": ["Playwright", "axe-core", "xUnit", "Vitest", "Zod", "Azure DevOps", "Git", "Postman", "SSMS"],
+  "Accessibility": ["WCAG 2.1 AA", "ARIA", "Semantic HTML", "WAVE", "NVDA"],
 };
 

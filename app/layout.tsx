@@ -30,7 +30,6 @@ export default function RootLayout({
           <AnimatedBackground />
           <Navigation />
           <main>{children}</main>
-          <Footer />
         </Providers>
       </body>
     </html>
